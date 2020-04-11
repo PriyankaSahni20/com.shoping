@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="36345" started-at="2020-04-11T12:15:00Z" finished-at="2020-04-11T12:15:36Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="36345" started-at="2020-04-11T12:15:00Z" finished-at="2020-04-11T12:15:36Z">
+      <class name="com.shopping.SignIn">
+        <test-method status="PASS" signature="setupsuiteandlaunch()[pri:0, instance:com.shopping.SignIn@3bfdc050]" name="setupsuiteandlaunch" is-config="true" duration-ms="17749" started-at="2020-04-11T12:15:00Z" finished-at="2020-04-11T12:15:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupsuiteandlaunch -->
+        <test-method status="PASS" signature="createaccount()[pri:0, instance:com.shopping.SignIn@3bfdc050]" name="createaccount" duration-ms="10003" started-at="2020-04-11T12:15:17Z" finished-at="2020-04-11T12:15:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createaccount -->
+        <test-method status="PASS" signature="register()[pri:0, instance:com.shopping.SignIn@3bfdc050]" name="register" duration-ms="8444" started-at="2020-04-11T12:15:27Z" finished-at="2020-04-11T12:15:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- register -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.shopping.SignIn@3bfdc050]" name="teardown" is-config="true" duration-ms="124" started-at="2020-04-11T12:15:36Z" finished-at="2020-04-11T12:15:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.shopping.SignIn -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
