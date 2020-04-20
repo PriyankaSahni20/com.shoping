@@ -12,40 +12,39 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.shoping.com.shoping.Constants;
+import com.shoping.com.shoping.ReusableMethods;
+
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 @Test
 public class SignIn {
-	String Email = "priyankasahniiiiii@gmail.com";
-	
-	
-	
-	
 	static WebDriver driver;
-	@BeforeClass
-	public void setupsuiteandlaunch() throws InterruptedException
-		{
+	String Email = "priyankasais4i78ffd99@gmail.com";
+	String validColor = "#35b33f";
+	
+	
+	
+	
+@BeforeClass
+	public  void setupsuiteandlaunch() 
+	{
 		
-		WebDriverManager.chromedriver().setup(); 
-		 driver = new ChromeDriver();
-		 driver.get("http://automationpractice.com/index.php");
-		 driver.manage().window().maximize();
+	
+	driver= ReusableMethods.setup(Constants.url);
+
+		
 		 	 }
 	@Test
-	public void createaccount() throws InterruptedException
+	public void createaccount() 
 		{
-		
-		  driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-			driver.findElement(By.xpath("//a[@class='login']")).click();
-			//driver.findElement(By.xpath("//a[contains(text(), 'Sign in')]/@href")).click();
-			
-			//driver.findElement(By.xpath("//div[@class='form-group form-error']/label[contains(text(),'Email address')]")).sendKeys("test@123.com");
+		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+		driver.findElement(By.xpath("//a[@class='login']")).click();
+		  
 			
 			driver.findElement(By.id("email_create")).sendKeys(Email);
 			
-			//driver.findElement(By.xpath("//button[@class='btn btn-default button button-medium exclusive'][.//span[contains(text(), '')]]")).click();
-			//driver.findElement(By.id("SubmitCreate")).click();
 			driver.findElement(By.xpath("//button[@id='SubmitCreate']")).click();
 			
 		}
@@ -54,15 +53,13 @@ public class SignIn {
 	public void register() throws InterruptedException
 	
 	{
-		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-			//driver.findElement(By.xpath("//input[@id='id_gender2']")).click();
+		//driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+			
 			 WebElement  mrsRadioBtn = driver.findElement(By.id("id_gender2"));
 			 //Checking if the Mrs Radio button is enabled on the webpage and printing the status
             boolean radioBtnIsEnabled = mrsRadioBtn.isEnabled();
             Assert.assertTrue(driver.findElement(By.id("id_gender2")).isEnabled());  
-            //System.out.println(driver.findElement(By.cssSelector("input[id*='SeniorCitizenDiscount']")).isSelected());  
-           // System.out.println("Is Mrs radio button enabled: "+radioBtnIsEnabled);
-            
+           
             //Selecting mrs radio button
             mrsRadioBtn.click();
             //Checking the radio button selection status
@@ -71,29 +68,36 @@ public class SignIn {
             Assert.assertTrue(driver.findElement(By.id("id_gender2")).isSelected()); 
             
             //System.out.println("Default Radio button selection Status: "+radioBtnIsSelected);
-            // //input[@id='customer_firstname']
+           
             driver.findElement(By.id("customer_firstname")).sendKeys("Priyanka");
             driver.findElement(By.name("customer_lastname")).sendKeys("Sahni");
             
-            WebElement EmailField =  driver.findElement(By.id("email"));
-            String Emailverify = EmailField.getAttribute("value"); // as value is the attribute of the priyankasahni09@gmail.com
-			
-            Assert.assertEquals(Email,Emailverify);
+            WebElement emailField =  driver.findElement(By.id("email"));
+            String emailVerify = emailField.getAttribute("value"); 
+            Assert.assertEquals(Email,emailVerify);
+           emailField.click();
+           WebElement passwordField = driver.findElement(By.xpath("//input[@name='passwd']"));
+           passwordField.click();
+           passwordField.sendKeys("Admin@123");
+             
+             String Color = driver.findElement(By.id("email")).getCssValue("color");
+             System.out.println(Color);
+             String hex = String.format("#%02x%02x%02x", 53,179,63,1);
+             System.out.println(hex);
+             Assert.assertEquals(validColor, hex);
             
-            //EmailField.click();
-            driver.findElement(By.xpath("//input[@name='passwd']")).sendKeys("Admin@123");
-            driver.findElement(By.id("days")).sendKeys("10");
+
+             driver.findElement(By.id("days")).sendKeys("10");
             driver.findElement(By.id("months")).sendKeys("October");
             driver.findElement(By.id("years")).sendKeys("1994");
-            // Select days = new Select(driver.findElement(By.id("days")));
-            //days.selectByValue("9");
+           
            
             driver.findElement(By.xpath("//input[@name='newsletter']")).click();
             driver.findElement(By.xpath("//div[@id='uniform-optin']")).click();
            
-           // driver.findElement(By.id("firstname")).sendKeys("Priyanka");
+           driver.findElement(By.id("firstname")).sendKeys("nn");
            
-          //  driver.findElement(By.xpath("//input[@id='lastname']")).sendKeys("Sahni");   
+           driver.findElement(By.xpath("//input[@id='lastname']")).sendKeys("ss");   
            
             driver.findElement(By.id("address1")).sendKeys("12 test , delhi");
            
@@ -103,27 +107,23 @@ public class SignIn {
             
             driver.findElement(By.id("postcode")).sendKeys("11000");
             
-        //driver.findElement(By.xpath("//select[@id='id_country']")).sendKeys("United States");
-            
-            // In selenium they had created a class Select for selected dropdown values and creating select object of Select class
-          Select Country = new Select(driver.findElement(By.xpath("//select[@name='id_country']")));
+          Select country = new Select(driver.findElement(By.xpath("//select[@name='id_country']")));
 
-          WebElement Countryoption = Country.getFirstSelectedOption();
+          WebElement countryOption = country.getFirstSelectedOption();
 
-          String defaultItem = Countryoption.getText();
+          String defaultItem = countryOption.getText();
           
-          // Select Country = new Select(driver.findElement(By.id("id_country")));
-          // String DefaultValue = Country.getFirstSelectedOption().getText();
+        
          
-       if(defaultItem != null)
+       if(defaultItem.equalsIgnoreCase("-"))
        {
     	   System.out.println(defaultItem);   
        }
        
        else
        {
-    	 //option.selectByVisibleText("United States");
-    	   Country.selectByVisibleText("United States");
+    	 
+    	   country.selectByVisibleText("United States");
        }
         
         driver.findElement(By.name("phone_mobile")).sendKeys("9898989899");

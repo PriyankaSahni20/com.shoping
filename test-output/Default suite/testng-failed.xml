@@ -3,14 +3,15 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.shopping.SignIn">
+      <class name="com.shopping.productpage">
         <methods>
-          <include name="createaccount"/>
-          <include name="setupsuiteandlaunch"/>
-          <include name="teardown"/>
-          <include name="register"/>
+          <include name="productToCart"/>
+          <include name="navigateToProduct"/>
+          <include name="productPopUp"/>
+          <include name="productToCartPopUp"/>
+          <include name="productDetailverify"/>
         </methods>
-      </class> <!-- com.shopping.SignIn -->
+      </class> <!-- com.shopping.productpage -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

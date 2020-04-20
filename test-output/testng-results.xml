@@ -1,29 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="7" passed="7">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="36345" started-at="2020-04-11T12:15:00Z" finished-at="2020-04-11T12:15:36Z">
+  <suite name="Default suite" duration-ms="42714" started-at="2020-04-20T13:21:57Z" finished-at="2020-04-20T13:22:40Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="36345" started-at="2020-04-11T12:15:00Z" finished-at="2020-04-11T12:15:36Z">
-      <class name="com.shopping.SignIn">
-        <test-method status="PASS" signature="setupsuiteandlaunch()[pri:0, instance:com.shopping.SignIn@3bfdc050]" name="setupsuiteandlaunch" is-config="true" duration-ms="17749" started-at="2020-04-11T12:15:00Z" finished-at="2020-04-11T12:15:17Z">
+    <test name="Default test" duration-ms="42714" started-at="2020-04-20T13:21:57Z" finished-at="2020-04-20T13:22:40Z">
+      <class name="com.shopping.productpage">
+        <test-method status="PASS" signature="loginToSite()[pri:0, instance:com.shopping.productpage@26653222]" name="loginToSite" duration-ms="16812" started-at="2020-04-20T13:21:57Z" finished-at="2020-04-20T13:22:14Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setupsuiteandlaunch -->
-        <test-method status="PASS" signature="createaccount()[pri:0, instance:com.shopping.SignIn@3bfdc050]" name="createaccount" duration-ms="10003" started-at="2020-04-11T12:15:17Z" finished-at="2020-04-11T12:15:27Z">
+        </test-method> <!-- loginToSite -->
+        <test-method status="PASS" signature="verifyheadings()[pri:1, instance:com.shopping.productpage@26653222]" name="verifyheadings" duration-ms="72" started-at="2020-04-20T13:22:14Z" finished-at="2020-04-20T13:22:14Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createaccount -->
-        <test-method status="PASS" signature="register()[pri:0, instance:com.shopping.SignIn@3bfdc050]" name="register" duration-ms="8444" started-at="2020-04-11T12:15:27Z" finished-at="2020-04-11T12:15:36Z">
+        </test-method> <!-- verifyheadings -->
+        <test-method status="PASS" signature="navigateToProduct()[pri:2, instance:com.shopping.productpage@26653222]" name="navigateToProduct" duration-ms="4543" started-at="2020-04-20T13:22:14Z" finished-at="2020-04-20T13:22:18Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- register -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:com.shopping.SignIn@3bfdc050]" name="teardown" is-config="true" duration-ms="124" started-at="2020-04-11T12:15:36Z" finished-at="2020-04-11T12:15:36Z">
+        </test-method> <!-- navigateToProduct -->
+        <test-method status="PASS" signature="productPopUp()[pri:3, instance:com.shopping.productpage@26653222]" name="productPopUp" duration-ms="10231" started-at="2020-04-20T13:22:18Z" finished-at="2020-04-20T13:22:29Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- teardown -->
-      </class> <!-- com.shopping.SignIn -->
+        </test-method> <!-- productPopUp -->
+        <test-method status="PASS" signature="productDetailverify()[pri:4, instance:com.shopping.productpage@26653222]" name="productDetailverify" duration-ms="350" started-at="2020-04-20T13:22:29Z" finished-at="2020-04-20T13:22:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- productDetailverify -->
+        <test-method status="PASS" signature="productToCart()[pri:5, instance:com.shopping.productpage@26653222]" name="productToCart" duration-ms="8105" started-at="2020-04-20T13:22:29Z" finished-at="2020-04-20T13:22:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- productToCart -->
+        <test-method status="PASS" signature="productToCartPopUp()[pri:6, instance:com.shopping.productpage@26653222]" name="productToCartPopUp" duration-ms="2571" started-at="2020-04-20T13:22:37Z" finished-at="2020-04-20T13:22:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- productToCartPopUp -->
+      </class> <!-- com.shopping.productpage -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
