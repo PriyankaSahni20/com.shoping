@@ -31,7 +31,6 @@ public class SignIn {
 	public  void setupsuiteandlaunch() 
 	{
 		
-	
 	driver= ReusableMethods.setup(Constants.url);
 
 		
